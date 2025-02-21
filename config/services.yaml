@@ -1,0 +1,14 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+        public: true
+
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{Controller,DependencyInjection,Entity,Kernel.php,Tests}'
